@@ -58,4 +58,4 @@ async function BLEManager() {
             </ul> 
             `;
         });
-)
+}
