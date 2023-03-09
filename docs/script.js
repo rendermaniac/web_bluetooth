@@ -6,10 +6,12 @@ button.addEventListener("click", BLEManager);
 async function BLEManager() {
 
         // Request the Bluetooth device through browser
+        let manufacturerData = [{
+        companyIdentifier: 0x00e0, /* Google */
+        dataPrefix: new Uint8Array([0x01, 0x02]),
+        }];
         const device = await navigator.bluetooth.requestDevice({
-                filters: [
-                {name: "Pixel 6 Pro"}
-                ],
+                filters: [{ manufacturerData }],
                 optionalServices: ["battery_service", "device_information"],
         });
 }
