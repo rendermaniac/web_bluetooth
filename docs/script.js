@@ -7,6 +7,10 @@ async function BLEManager() {
 
         // Request the Bluetooth device through browser
         const device = await navigator.bluetooth.requestDevice({
+        filters: [
+        {name: "Pixel 6 Pro"},
+        ]
+  
             optionalServices: ["battery_service", "device_information"],
             acceptAllDevices: true,
         });
